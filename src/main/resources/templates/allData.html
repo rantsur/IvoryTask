@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Data</title>
+    <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+    <link rel="stylesheet" href="css/styleAllData.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl as myCtrl" ng-init="myCtrl.enterAllData()">
+<div class="container white z-depth-2">
+    <ul class="tabs teal">
+        <li class="tab col s3"><a class="white-text" href="#register">all data</a></li>
+    </ul>
+    <div id="register" class="col s12">
+        <div class="form-container">
+            <table id="dataTable">
+                <tr>
+                    <th>English Name</th>
+                    <th>Hebrew Name</th>
+                    <th>City</th>
+                    <th>Street</th>
+                    <th>Home Number</th>
+                    <th>Phone</th>
+                    <th>Status Code</th>
+                    <th>Last Visited</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="c in data">
+                    <td>{{c.ename}}</td>
+                    <td>{{c.hname}}</td>
+                    <td>{{c.city}}</td>
+                    <td>{{c.street}}</td>
+                    <td>{{c.homeNumber}}</td>
+                    <td>{{c.phone}}</td>
+                    <td>{{c.activity_status_code}}</td>
+                    <td>{{c.timestamp | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+                    <td>
+                        <button ng-click="myCtrl.edit(c)" data-toggle="modal" data-target="#myModal"
+                                data-backdrop="static" data-keyboard="false">Edit
+                        </button>
+                    </td>
+                </tr>
+            </table>
+            <label class="results"> </label>
+        </div>
+    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="col s12">
+                    <form class="col s12">
+                        <ul class="tabs teal">
+                            <li class="tab col s3"><a class="white-text">Edit Data</a></li>
+                        </ul>
+                        <div class="form-container">
+                            <div class="row">
+                                <div class="input-field col s5">
+                                    <input id="ename" type="text" placeholder="" class="validate"
+                                           ng-model="myCtrl.editCustomer.ename">
+                                    <label for="ename">English Name</label>
+                                </div>
+                                <div class="input-field col s5">
+                                    <input id="hname" type="text" placeholder="" class="validate"
+                                           ng-model="myCtrl.editCustomer.hname">
+                                    <label for="hname">Hebrew Name</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input id="city" placeholder="" type="text" class="validate"
+                                           ng-model="myCtrl.editCustomer.city">
+                                    <label for="city">City</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="street" type="text" placeholder="" class="validate"
+                                           ng-model="myCtrl.editCustomer.street">
+                                    <label for="street">Street</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="homeNumber" type="text" placeholder="" class="validate"
+                                           ng-model="myCtrl.editCustomer.homeNumber">
+                                    <label for="homeNumber">Home Number</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s5">
+                                    <input id="phone" type="text" class="validate" placeholder=""
+                                           ng-model="myCtrl.editCustomer.phone">
+                                    <label for="phone">Phone</label>
+                                </div>
+                            </div>
+                            <center>
+                                <button class="btn waves-effect waves-light teal" type="submit"
+                                        ng-click="myCtrl.update()" name="action" style="margin-right: 4px">Save
+                                </button>
+                                <button type="button" class="btn waves-effect waves-light teal"
+                                        data-dismiss="modal">Close
+                                </button>
+                            </center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

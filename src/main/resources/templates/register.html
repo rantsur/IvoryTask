@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+    <link rel="stylesheet" href="css/styleRegister.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl as myCtrl">
+
+    <div class="container white z-depth-2">
+        <ul class="tabs teal">
+            <li class="tab col s3"><a class="white-text" href="#register">register</a></li>
+        </ul>
+        <div id="register" class="col s12">
+            <form class="regForm">
+                <div class="form-container">
+                    <h3 class="teal-text">Welcome</h3>
+                    <div class="row">
+                        <div class="input-field col s5">
+                            <input id="ename" type="text" class="validate" ng-model="customer.ename">
+                            <label for="ename">English Name</label>
+                        </div>
+                        <div class="input-field col s5">
+                            <input id="hname" type="text" class="validate" ng-model="customer.hname">
+                            <label for="hname">Hebrew Name</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="city" type="text" class="validate" ng-model="customer.city">
+                            <label for="city">City</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="street" type="text" class="validate" ng-model="customer.street">
+                            <label for="street">Street</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="homeNumber" type="text" class="validate" ng-model="customer.homeNumber">
+                            <label for="homeNumber">Home Number</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s5">
+                            <input id="phone" type="text" class="validate" ng-model="customer.phone">
+                            <label for="phone">Phone</label>
+                        </div>
+                    </div>
+                    <center>
+                        <button class="btn waves-effect waves-light teal" type="submit" name="action"
+                                ng-click="myCtrl.register()">Submit
+                        </button>
+                    </center>
+                </div>
+                <label id="results"></label>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

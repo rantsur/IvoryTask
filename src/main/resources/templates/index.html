@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel='stylesheet prefetch'
+          href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css'>
+    <link rel="stylesheet" href="css/styleIndex.css">
+</head>
+
+<body>
+
+<div class="container white z-depth-2">
+    <ul class="tabs teal">
+        <li class="tab col s3"><a class="white-text" href="#register">Welcome</a></li>
+    </ul>
+    <div id="register" class="col s12">
+            <div class="form-container">
+                <br>
+                <br>
+                <br>
+                <br>
+                <div>
+                    <center> <button class="button" onclick="open_register()">Sign Up</button> </center>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <center> <button class="button" onclick="open_allData()">See All Data</button> </center>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+function open_register(){
+    window.location.href = "register.html";
+}
+function open_allData(){
+    window.location.href = "allData.html";
+}
+</script>
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+
+</html>
