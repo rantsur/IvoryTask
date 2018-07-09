@@ -3,11 +3,6 @@ body
 	background: #f5f5f5;
 }
 
-h5
-{
-	font-weight: 400;
-}
-
 .container
  {
 	 margin-top: 30px;
@@ -39,26 +34,9 @@ th,td
 {
 	text-align: center;
 }
-
-.button {
-	background-color: white;
-	border: 2px solid #008080;
-	color: #008080;
-	padding: 16px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	width: 30px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
-}
-
-.button:hover {
-	background-color: #008080;
-	color: white;
+.btn{
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 #myModal {
@@ -66,5 +44,6 @@ th,td
     top:10%;
     left:0;
     width:55%;
-    height:62%;
+    height:65%;
+    z-index: 9999;
 }

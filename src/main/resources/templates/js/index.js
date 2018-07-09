@@ -16,6 +16,10 @@ app.controller('myCtrl', function ($scope, $http) {
                 window.location = "index.html";
             });
     };
+
+    ctrl.loadIndex = function () {
+        window.location = "index.html";
+    };
     ctrl.edit = function (customer) {
         ctrl.editCustomer = angular.copy(customer);
         ctrl.editBtnFlag = true;

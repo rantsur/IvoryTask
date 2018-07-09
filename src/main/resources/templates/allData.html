@@ -17,7 +17,7 @@
 <body ng-app="myApp" ng-controller="myCtrl as myCtrl" ng-init="myCtrl.enterAllData()">
 <div class="container white z-depth-2">
     <ul class="tabs teal">
-        <li class="tab col s3"><a class="white-text" href="#register">all data</a></li>
+        <li class="tab col s3"><a class="white-text">all data</a></li>
     </ul>
     <div id="register" class="col s12">
         <div class="form-container">
@@ -43,13 +43,20 @@
                     <td>{{c.activity_status_code}}</td>
                     <td>{{c.timestamp | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                     <td>
-                        <button name="editBtn" ng-click="myCtrl.edit(c)" data-toggle="modal" data-target="#myModal"
-                                ng-show="!myCtrl.editBtnFlag"> Edit
+                        <button ng-click="myCtrl.edit(c)" data-toggle="modal" data-target="#myModal"
+                                ng-show="!myCtrl.editBtnFlag"
+                                style="border: 2px solid #008080; width: 60px ; height: 40px; font-size: 16px; cursor: pointer; border-radius: 8px;">
+                            Edit
                         </button>
                     </td>
                 </tr>
             </table>
-            <label class="results"> </label>
+        </div>
+        <div style="text-align: center">
+            <button class="btn waves-effect waves-light teal"
+                    ng-click="myCtrl.loadIndex()" style="margin-left: auto; margin-right: auto;" ng-disabled="myCtrl.editBtnFlag">Back
+            </button>
+        </div>
         </div>
     </div>
 </div>
