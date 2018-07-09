@@ -62,7 +62,7 @@ th,td
 }
 
 #myModal {
-    position:absolute;
+    position:fixed;
     top:10%;
     left:0;
     width:55%;

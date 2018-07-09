@@ -43,8 +43,8 @@
                     <td>{{c.activity_status_code}}</td>
                     <td>{{c.timestamp | date:'dd-MM-yyyy HH:mm:ss'}}</td>
                     <td>
-                        <button ng-click="myCtrl.edit(c)" data-toggle="modal" data-target="#myModal"
-                                data-backdrop="static" data-keyboard="false">Edit
+                        <button name="editBtn" ng-click="myCtrl.edit(c)" data-toggle="modal" data-target="#myModal"
+                                ng-show="!myCtrl.editBtnFlag"> Edit
                         </button>
                     </td>
                 </tr>
@@ -53,7 +53,7 @@
         </div>
     </div>
 </div>
-<div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -105,7 +105,7 @@
                                         ng-click="myCtrl.update()" name="action" style="margin-right: 4px">Save
                                 </button>
                                 <button type="button" class="btn waves-effect waves-light teal"
-                                        data-dismiss="modal">Close
+                                        ng-click="myCtrl.modalClosed()" data-dismiss="modal">Close
                                 </button>
                             </center>
                         </div>
